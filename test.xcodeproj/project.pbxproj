@@ -13,7 +13,24 @@
 		9B64E3F2207DFD900026780E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B64E3F1207DFD900026780E /* Assets.xcassets */; };
 		9B64E3F5207DFD900026780E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64E3F3207DFD900026780E /* LaunchScreen.storyboard */; };
 		9B64E3F8207DFD900026780E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E3F7207DFD900026780E /* main.m */; };
+		9B64E3FF207DFDBF0026780E /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B64E3FE207DFDBE0026780E /* OCMock.framework */; };
+		9B64E402207DFE420026780E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64E401207DFE420026780E /* Person.m */; };
+		9B64E404207DFEA50026780E /* OCMock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B64E3FE207DFDBE0026780E /* OCMock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9B64E405207DFEA50026780E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9B64E404207DFEA50026780E /* OCMock.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9B64E3E5207DFD900026780E /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +43,9 @@
 		9B64E3F4207DFD900026780E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B64E3F6207DFD900026780E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B64E3F7207DFD900026780E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B64E3FE207DFDBE0026780E /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+		9B64E400207DFE420026780E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		9B64E401207DFE420026780E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B64E3FF207DFDBF0026780E /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,10 +79,13 @@
 		9B64E3E7207DFD900026780E /* test */ = {
 			isa = PBXGroup;
 			children = (
+				9B64E3FE207DFDBE0026780E /* OCMock.framework */,
 				9B64E3E8207DFD900026780E /* AppDelegate.h */,
 				9B64E3E9207DFD900026780E /* AppDelegate.m */,
 				9B64E3EB207DFD900026780E /* ViewController.h */,
 				9B64E3EC207DFD900026780E /* ViewController.m */,
+				9B64E400207DFE420026780E /* Person.h */,
+				9B64E401207DFE420026780E /* Person.m */,
 				9B64E3EE207DFD900026780E /* Main.storyboard */,
 				9B64E3F1207DFD900026780E /* Assets.xcassets */,
 				9B64E3F3207DFD900026780E /* LaunchScreen.storyboard */,
@@ -81,6 +105,7 @@
 				9B64E3E1207DFD900026780E /* Sources */,
 				9B64E3E2207DFD900026780E /* Frameworks */,
 				9B64E3E3207DFD900026780E /* Resources */,
+				9B64E405207DFEA50026780E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +168,7 @@
 			files = (
 				9B64E3ED207DFD900026780E /* ViewController.m in Sources */,
 				9B64E3F8207DFD900026780E /* main.m in Sources */,
+				9B64E402207DFE420026780E /* Person.m in Sources */,
 				9B64E3EA207DFD900026780E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,11 +311,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SZ6BRJK5P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/test",
+				);
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3ttech.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,11 +334,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SZ6BRJK5P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/test",
+				);
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3ttech.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
